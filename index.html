@@ -24,6 +24,8 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
 }
 </script>
+
+
 <?php
             if(isset($_POST['submit'])){
             $origin = $_POST[position.coords.latitude + "," + position.coords.longitude]; $destination = $_POST['41.882702,-87.619392'];
@@ -35,11 +37,6 @@ function showPosition(position) {
             <label><b>Travel Time: </b></label> <span><?php echo $data->rows[0]->elements[0]->duration->text; ?></span> 
 
         <?php } ?>
-
-
-
-
-
 
 
 </body>
