@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates!</p>
+<p>Click the button to get your coordinates?</p>
 
 <button onclick="getLocation()">Try It</button>
 
@@ -23,12 +23,15 @@ function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
 }
+
+var coords = position.coords.latitude + "," + position.coords.longitude;
+
 </script>
 
 
 <?php
-            if(isset($_POST['submit'])){
-            $origin = $_POST[position.coords.latitude + "," + position.coords.longitude]; $destination = $_POST['41.882702,-87.619392'];
+            
+            $origin = position.coords.latitude + "," + position.coords.longitude; $destination = 41.882702,-87.619392;
             $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$origin."&destinations=".$destination."&key=AIzaSyCbg1gB2SQywdo5xERZhPq-t_P77JH0xtY");
             $data = json_decode($api);
         ?>
