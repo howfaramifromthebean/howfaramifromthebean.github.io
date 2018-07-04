@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates?</p>
+<p>Click the button to get your coordinates!</p>
 
 <button onclick="getLocation()">Try It</button>
 
@@ -24,23 +24,22 @@ function showPosition(position) {
     "<br>Longitude: " + position.coords.longitude;
 }
 
-var coords = position.coords.latitude + "," + position.coords.longitude;
+function haversineGreatCircleDistance($latitudeFrom = position.coords.latitude, $longitudeFrom = position.coords.longitude, $latitudeTo = 41.882702, $longitudeTo = -87.619392, $earthRadius = 6371000)
+{
+  // convert from degrees to radians
+  $latFrom = deg2rad($latitudeFrom);
+  $lonFrom = deg2rad($longitudeFrom);
+  $latTo = deg2rad($latitudeTo);
+  $lonTo = deg2rad($longitudeTo);
+
+  $latDelta = $latTo - $latFrom;
+  $lonDelta = $lonTo - $lonFrom;
+
+  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+  return $angle * $earthRadius;
+}
 
 </script>
-
-
-<?php
-            
-            $origin = position.coords.latitude + "," + position.coords.longitude; $destination = 41.882702,-87.619392;
-            $api = file_get_contents("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=".$origin."&destinations=".$destination."&key=AIzaSyCbg1gB2SQywdo5xERZhPq-t_P77JH0xtY");
-            $data = json_decode($api);
-        ?>
-
-            <label><b>Distance: </b></label> <span><?php echo ((int)$data->rows[0]->elements[0]->distance->value / 1000).' Km'; ?></span> <br><br>
-            <label><b>Travel Time: </b></label> <span><?php echo $data->rows[0]->elements[0]->duration->text; ?></span> 
-
-        <?php } ?>
-
-
 </body>
 </html>
