@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates!</p>
+<p>Click the button to get your coordinates!!</p>
 
 <button onclick="getLocation()">Try It</button>
 
@@ -23,7 +23,9 @@ function showPosition(position) {
     x.innerHTML = "Latitude: " + position.coords.latitude + 
     "<br>Longitude: " + position.coords.longitude;
 }
+</script>
 
+<?php
 function haversineGreatCircleDistance($latitudeFrom = position.coords.latitude, $longitudeFrom = position.coords.longitude, $latitudeTo = 41.882702, $longitudeTo = -87.619392, $earthRadius = 6371000)
 {
   // convert from degrees to radians
@@ -37,9 +39,11 @@ function haversineGreatCircleDistance($latitudeFrom = position.coords.latitude, 
 
   $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
     cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
-  return $angle * $earthRadius;
+  $meters = $angle * $earthRadius;
+  echo $meters;
+  
 }
+?>
 
-</script>
 </body>
 </html>
