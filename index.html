@@ -2,9 +2,7 @@
 <html>
 <body>
 
-<p>Click the button to get your coordinates!!</p>
-
-<button onclick="getLocation()">Try It</button>
+<p onclick="getLocation()">How far am I from the Bean, America's #1 tourist location?</p>
 
 <p id="demo"></p>
 
@@ -41,14 +39,19 @@ var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 var d = R * c;
 if (d > 100) {
 x.innerHTML = "You're " + d + " miles from the Bean. This is so sad. Alexa " + "show me pictures of the bean.".link("https://www.google.com/search?biw=1440&bih=710&tbm=isch&sa=1&ei=NcI_W47qIvGg_QbL9LHAAw&q=cloud+gate&oq=cloud+gate&gs_l=img.3..0l2j0i67j0l7.10210.11300..11439...0....65.587.10......0....1..gws-wiz-img.......0i10.mLBdxn6BkxE");
-}  
-
+}  else if (d < 101 && d > 50) {
+x.innerHTML = "You're " + d + " miles from the Bean. That's not too far to travel for a magical work of art such as the bean - road trip???"
+} else if (d < 51 && d > 1) {
+x.innerHTML = "You're " + d + " miles from the Bean. You better tweet those Bean selfies!!"
+} else {
+x.innerHTML = "You're " + d + " miles from the Bean. Holy shit you're there! As a gift to u, here's a Bean selfie from 2012 :-)" + <br><img src="https://s15.postimg.cc/bamssvdbv/Screen_Shot_2018-07-06_at_3.47.26_PM.png"
+}
 }
 
 
 </script>
 
-
+<br><br><br><br><br><br><p style="font-size:50%;">This site does not store your location information. Thanks to <a href="www.w3schools.com">w3schools.com</a> and <a href="stackoverflow.com"> Stack Overflow</a> for help with the code and <a href="www.movable-type.co.uk">Movable Type Scripts</a> for help with the math. </p>
 
 </body>
 </html>
