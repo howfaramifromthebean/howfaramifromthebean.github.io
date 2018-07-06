@@ -28,8 +28,8 @@ Number.prototype.toRad = function() {
 function showPosition(position) {
 var lat2 = position.coords.latitude; 
 var lon2 = position.coords.longitude; 
-var lat1 = 40.94; 
-var lon1 = -73.8; 
+var lat1 = 41.882702; 
+var lon1 = -87.619392; 
 
 var R = 3959; // miles
 var x1 = lat2-lat1;
@@ -45,7 +45,7 @@ if (d > 100) {
 x.innerHTML = "You're " + d + " miles from the Bean. This is so sad. Alexa " + "show me pictures of the bean.".link("https://www.google.com/search?biw=1440&bih=710&tbm=isch&sa=1&ei=NcI_W47qIvGg_QbL9LHAAw&q=cloud+gate&oq=cloud+gate&gs_l=img.3..0l2j0i67j0l7.10210.11300..11439...0....65.587.10......0....1..gws-wiz-img.......0i10.mLBdxn6BkxE");
 }  else if (d < 101 && d > 50) {
 x.innerHTML = "You're " + d + " miles from the Bean. That's not too far to travel for a magical work of art such as the bean - road trip???";
-} else if (d < 51 && d > 1) {
+} else if (d < 51 && d > 3) {
 x.innerHTML = "You're " + d + " miles from the Bean. You better tweet those Bean selfies!!";
 }  else {
 x.innerHTML = "You're " + d + " miles from the Bean. Holy shit you're there! Enjoy gazing at a slightly distorted version of yourself and cherish the moment :-)";
